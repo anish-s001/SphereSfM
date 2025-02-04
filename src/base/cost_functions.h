@@ -117,7 +117,7 @@ class SphericalBundleAdjustmentCostFunction {
     // Project to image plane.
     const T lon = ceres::atan2(projection[0], projection[2]);
     const T lat = ceres::atan2(-projection[1],
-                               ceres::hypot(projection[0], projection[2]));
+                               ceres::sqrt(projection[0] * projection[0] + projection[2] * projection[2]));
     projection[0] = lon / (2 * M_PI);
     projection[1] = -lat / (2 * M_PI);
 
@@ -246,7 +246,7 @@ class SphericalBundleAdjustmentConstantPoseCostFunction {
     // Project to image plane.
     const T lon = ceres::atan2(projection[0], projection[2]);
     const T lat = ceres::atan2(-projection[1],
-                               ceres::hypot(projection[0], projection[2]));
+                               ceres::sqrt(projection[0] * projection[0] + projection[2] * projection[2]));
     projection[0] = lon / (2 * M_PI);
     projection[1] = -lat / (2 * M_PI);
 

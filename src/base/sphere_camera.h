@@ -17,6 +17,7 @@
 #include "base/camera.h"
 #include "util/alignment.h"
 #include "util/bitmap.h"
+#include <unordered_map>
 #include "util/types.h"
 
 namespace colmap {
